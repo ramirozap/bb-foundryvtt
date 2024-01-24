@@ -1,11 +1,13 @@
 {
-  "id": "brindlewood-bay",
-  "title": "Brindlewood Bay",
-  "description": "Brindlewood Bay system (unofficial)",
-  "version": "0.1.0",
-  "compatibility": {
-    "minimum": "11",
-    "verified": "11",
-    "maximum": "11"
+  "Actor": {
+    "types": ["Investigator"],
+    "Investigator": {
+      "biography": "",
+      "charisma": {
+        "min": 0,
+        "max": 10,
+        "value": 5
+      }
+    }
   }
 }
