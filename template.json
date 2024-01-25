@@ -6,31 +6,6 @@
       "name": "",
       "style": "",
       "activity": "",
-      "vitality": {
-        "min": 0,
-        "max": 3,
-        "value": 0
-      },
-      "composure": {
-        "min": 0,
-        "max": 3,
-        "value": 1
-      },
-      "reason": {
-        "min": 0,
-        "max": 3,
-        "value": 1
-      },
-      "presence": {
-        "min": 0,
-        "max": 3,
-        "value": 0
-      },
-      "sensitivity": {
-        "min": -5,
-        "max": 3,
-        "value": -1
-      },
       "conditions": []
     }
   }
