@@ -2,10 +2,6 @@
   "Actor": {
     "types": ["maven"],
     "maven": {
-      "biography": "",
-      "name": "",
-      "style": "",
-      "activity": "",
       "conditions": []
     }
   }

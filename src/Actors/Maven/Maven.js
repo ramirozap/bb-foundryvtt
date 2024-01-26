@@ -3,7 +3,8 @@ class MavenData extends foundry.abstract.DataModel {
     const fields = foundry.data.fields;
     return {
       name: new fields.HTMLField(),
-      biography: new fields.HTMLField(),
+      activity: new fields.HTMLField(),
+      style: new fields.HTMLField(),
       abilities: new fields.SchemaField({
         vitality: new fields.NumberField({
           required: true,

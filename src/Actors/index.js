@@ -1,1 +1,1 @@
-export { default as Maven } from "./Maven";
+export * from "./Maven/index.js";

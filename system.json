@@ -1,5 +1,5 @@
 {
-  "id": "brindlewood-ba",
+  "id": "brindlewood-bay",
   "title": "Brindlewood Bay",
   "description": "Brindlewood Bay system (unofficial)",
   "version": "0.1.0",
@@ -15,5 +15,6 @@
       "name": "Español",
       "path": "src/lang/es.json"
     }
-  ]
+  ],
+  "styles": ["src/Actors/Maven/styles.css"]
 }
