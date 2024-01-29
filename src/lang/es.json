@@ -1,1 +1,11 @@
-{}
+{
+  "MAVENSSHEET.STYLE": "Estilo",
+  "MAVENSSHEET.ACTIVITY": "Quehacer",
+  "MAVENSSHEET.NAME": "Nombre",
+  "MAVENSSHEET.ABILITIES": "Habilidades",
+  "MAVENSSHEET.VITALITY": "Vitalidad",
+  "MAVENSSHEET.COMPOSTURE": "Compostura",
+  "MAVENSSHEET.REASON": "Razón",
+  "MAVENSSHEET.PRESENCE": "Presencia",
+  "MAVENSSHEET.SENSITIVITY": "Sensibilidad"
+}
