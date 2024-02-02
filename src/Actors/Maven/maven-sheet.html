@@ -30,7 +30,7 @@
     <input
       name="style"
       type="text"
-      value="{{actor.style}}"
+      value="{{actor.system.style}}"
       placeholder="A la moda, Jackie O, Boutique de alta costura, etc."
     />
 
@@ -39,21 +39,29 @@
       name="activity"
       id="activity"
       type="text"
-      value="{{actor.activity}}"
+      value="{{actor.system.activity}}"
       placeholder="Bordar, cocinar tortas, jardinería, etc."
     />
   </section>
   <section>
     <h2>Habilidades</h2>
     <label htmlfor="vitality">Vitalidad</label>
-    <input name="vitality" type="number" value="{{actor.abilities.vitality}}" />
+    <input name="vitality" type="number" value="{{actor.system.abilities.vitality}}" />
 
     <label htmlfor="composure">Compostura</label>
     <input
       name="composure"
       id="composure"
       type="text"
-      value="{{actor.abilities.composure}}"
+      value="{{actor.system.abilities.composure}}"
+    />
+  </section>
+    <label htmlfor="style">Estilo</label>
+    <input
+      name="style"
+      type="text"
+      value="{{actor.system.style}}"
+      placeholder="A la moda, Jackie O, Boutique de alta costura, etc."
     />
   </section>
 </form>

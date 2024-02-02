@@ -15,4 +15,11 @@ export class MavenSheet extends ActorSheet {
       ],
     });
   }
+
+  /** @override */
+  getData() {
+    const data = super.getData();
+
+    return data;
+  }
 }
