@@ -19,49 +19,62 @@
           placeholder="Name"
         />
       </h1>
-      <div class="resources grid grid-2col">{{!-- resources here --}}</div>
-      <div class="abilities grid grid-3col">{{!-- abilities here --}}</div>
     </div>
   </header>
 
   {{!-- Sheet Body --}}
   <section>
-    <label htmlfor="style">Estilo</label>
+    <label htmlfor="style">{{localize "MAVEN_SHEET.style"}}</label>
     <input
-      name="style"
+      name="system.style"
       type="text"
-      value="{{actor.system.style}}"
+      value="{{system.style}}"
       placeholder="A la moda, Jackie O, Boutique de alta costura, etc."
     />
 
-    <label htmlfor="activity">Quehacer</label>
+    <label htmlfor="activity">{{localize "MAVEN_SHEET.activity"}}</label>
     <input
-      name="activity"
+      name="system.activity"
       id="activity"
       type="text"
-      value="{{actor.system.activity}}"
+      value="{{system.activity}}"
       placeholder="Bordar, cocinar tortas, jardinería, etc."
     />
   </section>
   <section>
     <h2>Habilidades</h2>
-    <label htmlfor="vitality">Vitalidad</label>
-    <input name="vitality" type="number" value="{{actor.system.abilities.vitality}}" />
-
-    <label htmlfor="composure">Compostura</label>
+    <label htmlfor="vitality">{{localize "MAVEN_SHEET.vitality"}}</label>
     <input
-      name="composure"
+      name="system.abilities.vitality"
+      type="number"
+      value="{{system.abilities.vitality}}"
+    />
+
+    <label htmlfor="composure">{{localize "MAVEN_SHEET.composure"}}</label>
+    <input
+      name="system.abilities.composure"
       id="composure"
       type="text"
-      value="{{actor.system.abilities.composure}}"
+      value="{{system.abilities.composure}}"
     />
-  </section>
-    <label htmlfor="style">Estilo</label>
+
+    <label htmlfor="reason">{{localize "MAVEN_SHEET.reason"}}</label>
     <input
-      name="style"
-      type="text"
-      value="{{actor.system.style}}"
-      placeholder="A la moda, Jackie O, Boutique de alta costura, etc."
+      name="system.abilities.reason"
+      type="number"
+      value="{{system.abilities.reason}}"
+    />
+    <label htmlfor="presence">{{localize "MAVEN_SHEET.presence"}}</label>
+    <input
+      name="system.abilities.presence"
+      type="number"
+      value="{{system.abilities.presence}}"
+    />
+    <label htmlfor="sensitivity">{{localize "MAVEN_SHEET.sensitivity"}}</label>
+    <input
+      name="system.abilities.sensitivity"
+      type="number"
+      value="{{system.abilities.sensitivity}}"
     />
   </section>
 </form>

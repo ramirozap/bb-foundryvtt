@@ -5,7 +5,7 @@ export class MavenSheet extends ActorSheet {
       classes: ["maven", "sheet", "actor"],
       template: "systems/brindlewood-bay/src/Actors/Maven/maven-sheet.html",
       width: 600,
-      height: 600,
+      height: 800,
       tabs: [
         {
           navSelector: ".sheet-tabs",
@@ -18,8 +18,13 @@ export class MavenSheet extends ActorSheet {
 
   /** @override */
   getData() {
-    const data = super.getData();
+    const context = super.getData();
 
-    return data;
+    const actorData = context.data;
+
+    context.system = actorData.system;
+    context.flags = actorData.flags;
+
+    return context;
   }
 }

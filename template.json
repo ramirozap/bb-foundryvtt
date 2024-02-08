@@ -1,9 +1,6 @@
 {
   "Actor": {
     "types": ["maven"],
-    "maven": {
-      "htmlFields": ["activity", "style"],
-      "conditions": []
-    }
+    "maven": {}
   }
 }

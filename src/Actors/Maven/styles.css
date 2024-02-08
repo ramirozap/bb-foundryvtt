@@ -1,5 +1,8 @@
+.maven.sheet.actor .window-content {
+  background-image: url(../../../assets/sheet-background.jpg);
+  background-size: 100% 100%;
+}
+
 .sheet-header {
-  background-color: red;
-  margin-bottom: 10px;
   height: fit-content;
 }
