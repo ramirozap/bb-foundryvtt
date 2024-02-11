@@ -1,7 +1,7 @@
 <form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
-  {{!-- Sheet Header --}}
+  {{! Sheet Header }}
   <header class="sheet-header">
-    {{!-- Header stuff goes here --}}
+    {{! Header stuff goes here }}
     <img
       class="profile-img"
       src="{{actor.img}}"
@@ -22,17 +22,18 @@
     </div>
   </header>
 
-  {{!-- Sheet Body --}}
+  {{! Sheet Body }}
   <section>
-    <label htmlfor="style">{{localize "MAVEN_SHEET.style"}}</label>
+    <label for="style">{{localize "MAVEN_SHEET.style"}}</label>
     <input
+      id="style"
       name="system.style"
       type="text"
       value="{{system.style}}"
       placeholder="A la moda, Jackie O, Boutique de alta costura, etc."
     />
 
-    <label htmlfor="activity">{{localize "MAVEN_SHEET.activity"}}</label>
+    <label for="activity">{{localize "MAVEN_SHEET.activity"}}</label>
     <input
       name="system.activity"
       id="activity"
@@ -43,38 +44,53 @@
   </section>
   <section>
     <h2>Habilidades</h2>
-    <label htmlfor="vitality">{{localize "MAVEN_SHEET.vitality"}}</label>
+    <label for="vitality">{{localize "MAVEN_SHEET.vitality"}}</label>
     <input
       name="system.abilities.vitality"
       type="number"
       value="{{system.abilities.vitality}}"
+      id="vitality"
     />
 
-    <label htmlfor="composure">{{localize "MAVEN_SHEET.composure"}}</label>
+    <label for="composure">{{localize "MAVEN_SHEET.composure"}}</label>
     <input
       name="system.abilities.composure"
       id="composure"
-      type="text"
+      type="number"
       value="{{system.abilities.composure}}"
     />
 
-    <label htmlfor="reason">{{localize "MAVEN_SHEET.reason"}}</label>
+    <label for="reason">{{localize "MAVEN_SHEET.reason"}}</label>
     <input
       name="system.abilities.reason"
       type="number"
+      id="reason"
       value="{{system.abilities.reason}}"
     />
-    <label htmlfor="presence">{{localize "MAVEN_SHEET.presence"}}</label>
+    <label for="presence">{{localize "MAVEN_SHEET.presence"}}</label>
     <input
       name="system.abilities.presence"
       type="number"
       value="{{system.abilities.presence}}"
+      id="presence"
     />
-    <label htmlfor="sensitivity">{{localize "MAVEN_SHEET.sensitivity"}}</label>
+    <label for="sensitivity">{{localize "MAVEN_SHEET.sensitivity"}}</label>
     <input
       name="system.abilities.sensitivity"
       type="number"
       value="{{system.abilities.sensitivity}}"
+      id="sensitivity"
     />
+  </section>
+  <section class="experience">
+    <h2>{{localize "MAVEN_SHEET.experience"}}</h2>
+    <div class="experience-control">
+      {{#times system.experience.value}}
+        <i class="fa-solid fa-square-check"></i>
+      {{/times}}
+      {{#times system.missingExperience}}
+        <i class="fa-regular fa-square"></i>
+      {{/times}}
+    </div>
   </section>
 </form>
