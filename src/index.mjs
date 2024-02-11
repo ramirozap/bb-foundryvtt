@@ -1,4 +1,5 @@
 import { MavenData, MavenSheet, Maven } from "./Actors/index.js";
+import { loadHandleBarTemplates } from "./utils/loadHandlebarPartials.js";
 
 Hooks.on("init", () => {
   CONFIG.Actor.systemDataModels.maven = MavenData;
@@ -6,6 +7,8 @@ Hooks.on("init", () => {
 
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("brindlewood-bay", MavenSheet, { makeDefault: true });
+
+  loadHandleBarTemplates();
 
   Handlebars.registerHelper("times", function (n, block) {
     var result = "";

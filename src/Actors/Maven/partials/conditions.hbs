@@ -1,0 +1,13 @@
+<section>
+  <h2>{{localize "MAVEN_SHEET.conditions"}}</h2>
+  {{#each system.conditions}}
+    <div class="condition">
+      <input
+        type="text"
+        id="condition-{{@index}}"
+        class="condition-blur"
+        value="{{this}}"
+      />
+    </div>
+  {{/each}}
+</section>

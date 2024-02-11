@@ -38,6 +38,8 @@ class MavenSheet extends ActorSheet {
     html
       .find(".experience-control")
       .on("click contextmenu", this._onExperienceControl.bind(this));
+
+    html.find(".condition-blur").on("blur", this._onConditionUpdate.bind(this));
   }
 
   async _onExperienceControl(event) {
@@ -64,6 +66,23 @@ class MavenSheet extends ActorSheet {
         });
       }
     }
+  }
+
+  async _onConditionUpdate(event) {
+    event.preventDefault();
+    const target = event.target;
+    const position = target.id.slice(-1);
+    const conditions = this.actor.system.conditions;
+
+    if (conditions[position] === target.value) {
+      return;
+    }
+
+    conditions[position] = target.value;
+
+    return await this.actor.update({
+      ["system.conditions"]: conditions,
+    });
   }
 }
 

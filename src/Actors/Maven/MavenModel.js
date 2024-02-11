@@ -20,6 +20,9 @@ class MavenData extends foundry.abstract.DataModel {
           max: 5,
         }),
       }),
+      conditions: new fields.ArrayField(new fields.StringField(), {
+        initial: [" ", " ", " "],
+      }),
       abilities: new fields.SchemaField({
         vitality: new fields.NumberField({
           required: true,

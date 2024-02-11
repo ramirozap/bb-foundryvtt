@@ -2,6 +2,7 @@
   "MAVEN_SHEET": {
     "style": "Estilo",
     "activity": "Quehacer",
+    "conditions": "Condiciones",
     "name": "Nombre",
     "abilities": "Habilidades",
     "vitality": "Vitalidad",
