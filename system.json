@@ -16,5 +16,7 @@
       "path": "src/lang/es.json"
     }
   ],
-  "styles": ["src/Actors/Maven/styles.css"]
+  "styles": ["src/Actors/Maven/styles.css"],
+  "manifest": "https://raw.githubusercontent.com/ramirozap/bb-foundryvtt/main/system.json",
+  "download": "https://github.com/ramirozap/bb-foundryvtt/archive/refs/tags/0.1.zip"
 }
