@@ -4,6 +4,10 @@ class MavenData extends foundry.abstract.DataModel {
     return {
       activity: new fields.HTMLField(),
       style: new fields.HTMLField(),
+      selectedRollType: new fields.StringField({
+        required: true,
+        initial: "2d6",
+      }),
       experience: new fields.SchemaField({
         value: new fields.NumberField({
           required: true,
@@ -29,35 +33,35 @@ class MavenData extends foundry.abstract.DataModel {
           initial: 0,
           integer: true,
           max: 3,
-          step: 1,
+          min: -3,
         }),
         composure: new fields.NumberField({
           required: true,
           initial: 1,
           integer: true,
           max: 3,
-          step: 1,
+          min: -3,
         }),
         reason: new fields.NumberField({
           required: true,
           initial: 1,
           integer: true,
           max: 3,
-          step: 1,
+          min: -3,
         }),
         presence: new fields.NumberField({
           required: true,
-          initial: 1,
+          initial: 0,
           integer: true,
           max: 3,
-          step: 1,
+          min: -3,
         }),
         sensitivity: new fields.NumberField({
           required: true,
           initial: -1,
           integer: true,
           max: 3,
-          step: 1,
+          min: -3,
         }),
       }),
     };

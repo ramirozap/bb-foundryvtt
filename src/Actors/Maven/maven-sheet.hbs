@@ -23,26 +23,29 @@
   </header>
 
   {{! Sheet Body }}
-  <section>
-    <label for="style">{{localize "MAVEN_SHEET.style"}}</label>
-    <input
-      id="style"
-      name="system.style"
-      type="text"
-      value="{{system.style}}"
-      placeholder="A la moda, Jackie O, Boutique de alta costura, etc."
-    />
-
-    <label for="activity">{{localize "MAVEN_SHEET.activity"}}</label>
-    <input
-      name="system.activity"
-      id="activity"
-      type="text"
-      value="{{system.activity}}"
-      placeholder="Bordar, cocinar tortas, jardinería, etc."
-    />
+  <section class="look">
+    <div>
+      <label for="style">{{localize "MAVEN_SHEET.style"}}</label>
+      <input
+        id="style"
+        name="system.style"
+        type="text"
+        value="{{system.style}}"
+        placeholder="A la moda, Jackie O, Boutique de alta costura, etc."
+      />
+    </div>
+    <div>
+      <label for="activity">{{localize "MAVEN_SHEET.activity"}}</label>
+      <input
+        name="system.activity"
+        id="activity"
+        type="text"
+        value="{{system.activity}}"
+        placeholder="Bordar, cocinar tortas, jardinería, etc."
+      />
+    </div>
+    {{> systems/brindlewood-bay/src/Actors/Maven/partials/experience.hbs}}
   </section>
   {{> systems/brindlewood-bay/src/Actors/Maven/partials/abilities.hbs}}
-  {{> systems/brindlewood-bay/src/Actors/Maven/partials/experience.hbs}}
   {{> systems/brindlewood-bay/src/Actors/Maven/partials/conditions.hbs}}
 </form>

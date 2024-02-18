@@ -31,6 +31,40 @@ export class Maven extends Actor {
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
   }
+
+  /**
+   * Override getRollData() that's supplied to rolls.
+   */
+  getRollData() {
+    const data = super.getRollData();
+
+    // Prepare character roll data.
+    this._getCharacterRollData(data);
+    this._getNpcRollData(data);
+
+    return data;
+  }
+
+  _getCharacterRollData(data) {
+    if (this.type !== "maven") return;
+
+    // Copy the ability scores to the top level, so that rolls can use
+    // formulas like `@str.mod + 4`.
+    if (data.abilities) {
+      for (let [k, v] of Object.entries(data.abilities)) {
+        data[k] = foundry.utils.deepClone(v);
+      }
+    }
+  }
+
+  /**
+   * Prepare NPC roll data.
+   */
+  _getNpcRollData(data) {
+    if (this.type !== "npc") return;
+
+    // Process additional NPC data here.
+  }
 }
 
 export default Maven;

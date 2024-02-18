@@ -1,8 +1,115 @@
+:root {
+  --primary-color: #1e3050;
+}
+
 .maven.sheet.actor .window-content {
-  background-image: url(../../../assets/sheet-background.jpg);
+  /* background-image: url(../../../assets/sheet-background.jpg);*/
+  background-image: none;
+  background-color: beige;
   background-size: 100% 100%;
+  color: var(--primary-color);
+}
+
+.maven.sheet.actor input {
+  background-color: beige;
+  border: 1px solid transparent;
+  border-radius: 0;
+  border-bottom: 1px solid var(--primary-color);
+  padding: 3px;
 }
 
 .sheet-header {
-  height: fit-content;
+  max-height: 80px;
+}
+
+.abilities {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.maven.sheet.actor .abilities input {
+  border: 2px solid var(--primary-color);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 35px;
+  margin-top: 5px;
+}
+
+.ability {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ability i {
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-top: -12px;
+  cursor: pointer;
+  background-color: beige;
+  width: 40px;
+  text-align: center;
+}
+
+.ability i:hover {
+  text-shadow: #cecece 2px 2px 2px;
+}
+
+.experience-control i {
+  margin-top: 5px;
+  font-size: 20px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.roll-modifiers {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  width: 50px;
+}
+
+.roll-modifiers > label {
+  margin-bottom: 5px;
+}
+
+.roll-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.roll-type label {
+  font-size: 15px;
+  color: var(--primary-color);
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+  padding: 5px;
+}
+
+.advantage-mod {
+  display: none;
+}
+
+.advantage-mod[checked] + label {
+  background-color: var(--primary-color);
+  color: beige;
+}
+
+.look {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-height: 50px;
 }

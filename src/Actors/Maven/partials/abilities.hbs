@@ -1,40 +1,41 @@
 <section>
   <h2>Habilidades</h2>
-  <label for="vitality">{{localize "MAVEN_SHEET.vitality"}}</label>
-  <input
-    name="system.abilities.vitality"
-    id="vitality"
-    type="number"
-    value="{{system.abilities.vitality}}"
-  />
-
-  <label for="composure">{{localize "MAVEN_SHEET.composure"}}</label>
-  <input
-    name="system.abilities.composure"
-    id="composure"
-    type="number"
-    value="{{system.abilities.composure}}"
-  />
-
-  <label for="reason">{{localize "MAVEN_SHEET.reason"}}</label>
-  <input
-    name="system.abilities.reason"
-    id="reason"
-    type="number"
-    value="{{system.abilities.reason}}"
-  />
-  <label for="presence">{{localize "MAVEN_SHEET.presence"}}</label>
-  <input
-    name="system.abilities.presence"
-    id="presence"
-    type="number"
-    value="{{system.abilities.presence}}"
-  />
-  <label for="sensitivity">{{localize "MAVEN_SHEET.sensitivity"}}</label>
-  <input
-    name="system.abilities.sensitivity"
-    id="sensitivity"
-    type="number"
-    value="{{system.abilities.sensitivity}}"
-  />
+  <div class="abilities">
+    {{#each system.abilities as |ability|}}
+      <div class="ability">
+        <label for="{{@key}}">{{localize @key}}</label>
+        <input
+          name="system.abilities.{{@key}}"
+          id="{{@key}}"
+          type="number"
+          max="3"
+          min="-3"
+          value="{{ability}}"
+        />
+        <i
+          class="fa-duotone fa-dice rollable"
+          style="--fa-secondary-color: #cccccc; --fa-secondary-opacity: 1;"
+          data-roll="{{../system.selectedRollType}}+{{ability}}"
+          data-label={{localize @key}}
+        ></i>
+      </div>
+    {{/each}}
+    <div class="roll-modifiers">
+      <label>Mod</label>
+      {{#each rollModifiers.rollTypes as |rollType|}}
+        <div class="roll-type">
+          <input
+            class="advantage-mod"
+            id="{{rollType.label}}"
+            type="radio"
+            value="{{rollType.value}}"
+            {{#when ../system.selectedRollType "eq" rollType.value }}
+            checked
+            {{/when}}
+          />
+          <label for="{{rollType.label}}">{{rollType.label}}</label>
+        </div>
+      {{/each}}
+    </div>
+  </div>
 </section>

@@ -5,11 +5,12 @@
     "conditions": "Condiciones",
     "name": "Nombre",
     "abilities": "Habilidades",
-    "vitality": "Vitalidad",
-    "composure": "Compostura",
-    "reason": "Razón",
-    "presence": "Presencia",
-    "sensitivity": "Sensibilidad",
-    "experience": "Experiencia"
-  }
+    "experience": "Puntos de Experiencia"
+  },
+  "abilities": "Habilidades",
+  "vitality": "Vitalidad",
+  "composure": "Compostura",
+  "reason": "Razón",
+  "presence": "Presencia",
+  "sensitivity": "Sensibilidad"
 }
