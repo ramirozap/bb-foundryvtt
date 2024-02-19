@@ -5,7 +5,9 @@
     "conditions": "Condiciones",
     "name": "Nombre",
     "abilities": "Habilidades",
-    "experience": "Puntos de Experiencia"
+    "experience": "Puntos de Experiencia",
+    "homeSweetHome": "Hogar Dulce Hogar",
+    "expertMovement": "Movimiento Experto"
   },
   "abilities": "Habilidades",
   "vitality": "Vitalidad",

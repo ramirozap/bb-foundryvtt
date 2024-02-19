@@ -44,8 +44,18 @@
         placeholder="Bordar, cocinar tortas, jardinería, etc."
       />
     </div>
-    {{> systems/brindlewood-bay/src/Actors/Maven/partials/experience.hbs}}
+    <div>
+      <label for="expert-movement">{{localize "MAVEN_SHEET.expertMovement"}}</label>
+      <input
+        name="system.expertMovement"
+        id="expert-movement"
+        type="text"
+        value="{{system.expertMovement}}"
+      />
+    </div>
   </section>
+  {{> systems/brindlewood-bay/src/Actors/Maven/partials/experience.hbs}}
   {{> systems/brindlewood-bay/src/Actors/Maven/partials/abilities.hbs}}
   {{> systems/brindlewood-bay/src/Actors/Maven/partials/conditions.hbs}}
+  {{> systems/brindlewood-bay/src/Actors/Maven/partials/home-sweet-home.hbs}}
 </form>

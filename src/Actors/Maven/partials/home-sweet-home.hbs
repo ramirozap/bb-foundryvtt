@@ -1,0 +1,35 @@
+<section>
+  <h2>{{localize "MAVEN_SHEET.homeSweetHome"}}</h2>
+  <div class="home-sweet-home">
+
+    {{#each system.homeSweetHomeItems as |homeSweetHomeItem|}}
+      <div class="item">
+        <div class="home-sweet-home-checkbox" data-position={{@index}}>
+          {{#if homeSweetHomeItem.used}}
+            <i class="fa-solid fa-square-check"></i>
+          {{else}}
+            <i class="fa-regular fa-square"></i>
+          {{/if}}
+        </div>
+        <div>
+          <input
+            type="text"
+            id="homeSweetHome-{{@index}}"
+            class="home-sweet-home-blur"
+            value="{{homeSweetHomeItem.name}}"
+            data-position={{@index}}
+          />
+        </div>
+        <i
+          data-position={{@index}}
+          class="fa-regular fa-circle-minus home-sweet-home-remove"
+        ></i>
+      </div>
+    {{/each}}
+    {{#when system.homeSweetHomeItems.length "lt" 10}}
+      <div class="item">
+        <i class="fa-sharp fa-solid fa-plus home-sweet-home-add"></i>
+      </div>
+    {{/when}}
+  </div>
+</section>

@@ -53,6 +53,30 @@ class MavenSheet extends ActorSheet {
     html.on("click", ".rollable", this._onRoll.bind(this));
 
     html.on("click", ".advantage-mod", this._onSelectModifier.bind(this));
+
+    html.on(
+      "click",
+      ".home-sweet-home-add",
+      this._onAddHomeSweetHomeItem.bind(this)
+    );
+
+    html.on(
+      "click",
+      ".home-sweet-home-remove",
+      this._onRemoveHomeSweetHomeItem.bind(this)
+    );
+
+    html.on(
+      "click contextmenu",
+      ".home-sweet-home-checkbox",
+      this._onUseHomeSweetHomeItem.bind(this)
+    );
+
+    html.on(
+      "blur",
+      ".home-sweet-home-blur",
+      this._onHomeSweetHomeItemUpdate.bind(this)
+    );
   }
 
   async _onExperienceControl(event) {
@@ -83,15 +107,16 @@ class MavenSheet extends ActorSheet {
 
   async _onConditionUpdate(event) {
     event.preventDefault();
-    const target = event.target;
-    const position = target.id.slice(-1);
+    console.log("ConditionUpdate", event);
+    const element = event.currentTarget;
+    const position = element.dataset.position;
     const conditions = this.actor.system.conditions;
 
-    if (conditions[position] === target.value) {
+    if (conditions[position] === element.value) {
       return;
     }
 
-    conditions[position] = target.value;
+    conditions[position] = element.value;
 
     return await this.actor.update({
       ["system.conditions"]: conditions,
@@ -147,6 +172,57 @@ class MavenSheet extends ActorSheet {
 
     return await this.actor.update({
       ["system.selectedRollType"]: newValue,
+    });
+  }
+
+  async _onAddHomeSweetHomeItem(event) {
+    event.preventDefault();
+
+    const homeSweetHomeItems = this.actor.system.homeSweetHomeItems;
+    homeSweetHomeItems.push({ used: false, name: "" });
+
+    return await this.actor.update({
+      ["system.homeSweetHomeItems"]: homeSweetHomeItems,
+    });
+  }
+
+  async _onRemoveHomeSweetHomeItem(event) {
+    event.preventDefault();
+    const position = event.currentTarget.dataset.position;
+
+    const homeSweetHomeItems = this.actor.system.homeSweetHomeItems;
+    homeSweetHomeItems.splice(position, 1);
+
+    return await this.actor.update({
+      ["system.homeSweetHomeItems"]: homeSweetHomeItems,
+    });
+  }
+
+  _onUseHomeSweetHomeItem(event) {
+    event.preventDefault();
+    const position = event.currentTarget.dataset.position;
+    const homeSweetHomeItems = this.actor.system.homeSweetHomeItems;
+
+    if (event.type == "contextmenu") {
+      homeSweetHomeItems[position].used = false;
+    } else {
+      homeSweetHomeItems[position].used = true;
+    }
+
+    return this.actor.update({
+      ["system.homeSweetHomeItems"]: homeSweetHomeItems,
+    });
+  }
+
+  async _onHomeSweetHomeItemUpdate(event) {
+    event.preventDefault();
+    const position = event.currentTarget.dataset.position;
+    const homeSweetHomeItems = this.actor.system.homeSweetHomeItems;
+
+    homeSweetHomeItems[position].name = event.currentTarget.value;
+
+    return await this.actor.update({
+      ["system.homeSweetHomeItems"]: homeSweetHomeItems,
     });
   }
 }
