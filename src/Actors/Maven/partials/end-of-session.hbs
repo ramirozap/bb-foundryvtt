@@ -1,0 +1,19 @@
+<section>
+  <h2>{{localize "MAVEN_SHEET.endOfSessionQuestions"}}</h2>
+  <div class="questions">
+    {{#each system.endOfSessionQuestions as |endOfSession|}}
+      <div class="question">
+        <div class="end-session-checkbox" data-position={{@index}}>
+          {{#if endOfSession.selected}}
+            <i class="fa-solid fa-square-check"></i>
+          {{else}}
+            <i class="fa-regular fa-square"></i>
+          {{/if}}
+        </div>
+        <span>
+          {{endOfSession.question}}
+        </span>
+      </div>
+    {{/each}}
+  </div>
+</section>

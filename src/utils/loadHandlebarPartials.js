@@ -9,6 +9,7 @@ export async function loadHandleBarTemplates() {
     `${mavenSheetPartialsBasePath}experience.hbs`,
     `${mavenSheetPartialsBasePath}conditions.hbs`,
     `${mavenSheetPartialsBasePath}home-sweet-home.hbs`,
+    `${mavenSheetPartialsBasePath}end-of-session.hbs`,
   ];
 
   return loadTemplates(templatePaths);

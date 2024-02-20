@@ -107,7 +107,6 @@ class MavenSheet extends ActorSheet {
 
   async _onConditionUpdate(event) {
     event.preventDefault();
-    console.log("ConditionUpdate", event);
     const element = event.currentTarget;
     const position = element.dataset.position;
     const conditions = this.actor.system.conditions;
@@ -162,8 +161,6 @@ class MavenSheet extends ActorSheet {
 
   async _onSelectModifier(event) {
     event.preventDefault();
-
-    console.log("SelectModifier", this.actor.selectedRollType);
 
     const newValue =
       this.actor.system.selectedRollType === event.currentTarget.value

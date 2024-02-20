@@ -150,3 +150,9 @@
 .home-sweet-home-add {
   margin-left: 3px;
 }
+
+.conditions {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+}

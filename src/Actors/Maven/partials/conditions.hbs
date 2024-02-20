@@ -1,14 +1,16 @@
 <section>
   <h2>{{localize "MAVEN_SHEET.conditions"}}</h2>
-  {{#each system.conditions}}
-    <div class="condition">
-      <input
-        type="text"
-        id="condition-{{@index}}"
-        data-position="{{@index}}"
-        class="condition-blur"
-        value="{{this}}"
-      />
-    </div>
-  {{/each}}
+  <div class="conditions">
+    {{#each system.conditions}}
+      <div class="condition">
+        <input
+          type="text"
+          id="condition-{{@index}}"
+          data-position="{{@index}}"
+          class="condition-blur"
+          value="{{this}}"
+        />
+      </div>
+    {{/each}}
+  </div>
 </section>
