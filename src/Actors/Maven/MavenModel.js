@@ -20,7 +20,7 @@ const END_SESSION_QUESTIONS = [
   { selected: false, question: "¿Te has vuelto loquita por alguien?" },
   {
     selected: false,
-    question: `¿Le has demostrado aalguien que "Quién tuvo, retuvo"?`,
+    question: `¿Le has demostrado alguien que "Quién tuvo, retuvo"?`,
   },
 ];
 

@@ -2,6 +2,12 @@
   --primary-color: #1e3050;
 }
 
+.maven.sheet.actor .window-content i {
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
 .maven.sheet.actor .window-content {
   /* background-image: url(../../../assets/sheet-background.jpg);*/
   background-image: none;
@@ -46,9 +52,7 @@
 
 .ability i {
   font-size: 24px;
-  color: var(--primary-color);
   margin-top: -12px;
-  cursor: pointer;
   background-color: beige;
   width: 40px;
   text-align: center;
@@ -60,9 +64,6 @@
 
 .experience-control i {
   margin-top: 5px;
-  font-size: 20px;
-  color: var(--primary-color);
-  cursor: pointer;
 }
 
 .roll-modifiers {
@@ -120,7 +121,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 0 10px;
 }
 
@@ -131,12 +132,6 @@
   grid-template-columns: 20px 1fr 20px;
   justify-content: center;
   align-items: end;
-}
-
-.home-sweet-home i {
-  cursor: pointer;
-  font-size: 20px;
-  color: var(--primary-color);
 }
 
 .home-sweet-home-remove {
@@ -155,4 +150,15 @@
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.questions {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.questions .question {
+  display: grid;
+  grid-template-columns: 25px 1fr;
 }

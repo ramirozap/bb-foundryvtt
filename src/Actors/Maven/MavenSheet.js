@@ -77,6 +77,12 @@ class MavenSheet extends ActorSheet {
       ".home-sweet-home-blur",
       this._onHomeSweetHomeItemUpdate.bind(this)
     );
+
+    html.on(
+      "click contextmenu",
+      ".on-click-question",
+      this._onQuestionToggle.bind(this)
+    );
   }
 
   async _onExperienceControl(event) {
@@ -221,6 +227,39 @@ class MavenSheet extends ActorSheet {
     return await this.actor.update({
       ["system.homeSweetHomeItems"]: homeSweetHomeItems,
     });
+  }
+
+  async _onQuestionToggle(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const position = element.dataset.position;
+
+    if (position === "0") {
+      return;
+    }
+
+    const questions = this.actor.system.endOfSessionQuestions;
+
+    if (event.type == "contextmenu") {
+      questions[position].selected = false;
+      return await this.actor.update({
+        ["system.endOfSessionQuestions"]: questions,
+      });
+    } else {
+      const numberOfSelectedQuestions = questions.filter(
+        (question) => question.selected
+      ).length;
+
+      if (numberOfSelectedQuestions >= 3) {
+        return;
+      }
+
+      questions[position].selected = true;
+
+      return await this.actor.update({
+        ["system.endOfSessionQuestions"]: questions,
+      });
+    }
   }
 }
 
