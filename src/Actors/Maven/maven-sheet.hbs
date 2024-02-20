@@ -1,16 +1,9 @@
-<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+<form class="{{cssClass}} {{actor.type}}" autocomplete="off">
   {{! Sheet Header }}
-  <header class="sheet-header">
-    {{! Header stuff goes here }}
-    <img
-      class="profile-img"
-      src="{{actor.img}}"
-      data-edit="img"
-      title="{{actor.name}}"
-      height="100"
-      width="100"
-    />
-    <div class="header-fields">
+  <aside class="sheet-sidebar">
+    {{! Sidebar stuff goes here }}
+    <header class="sheet-header flexcol">
+      {{! Header stuff goes here }}
       <h1 class="charname">
         <input
           name="name"
@@ -19,44 +12,56 @@
           placeholder="Name"
         />
       </h1>
-    </div>
-  </header>
-
+      <img
+        class="profile-img"
+        src="{{actor.img}}"
+        data-edit="img"
+        title="{{actor.name}}"
+        height="100"
+        width="100"
+      />
+    </header>
+    <section class="look">
+      <div>
+        <label for="style">{{localize "MAVEN_SHEET.style"}}</label>
+        <input
+          id="style"
+          name="system.style"
+          type="text"
+          value="{{system.style}}"
+          placeholder="A la moda, Jackie O, Boutique de alta costura, etc."
+        />
+      </div>
+      <div>
+        <label for="activity">{{localize "MAVEN_SHEET.activity"}}</label>
+        <input
+          name="system.activity"
+          id="activity"
+          type="text"
+          value="{{system.activity}}"
+          placeholder="Bordar, cocinar tortas, jardinería, etc."
+        />
+      </div>
+    {{> systems/brindlewood-bay/src/Actors/Maven/partials/experience.hbs}}
+      <div>
+        <label for="expert-movement">{{localize "MAVEN_SHEET.expertMovement"}}</label>
+        <input
+          name="system.expertMovement"
+          id="expert-movement"
+          type="text"
+          value="{{system.expertMovement}}"
+        />
+      </div>
+    {{> systems/brindlewood-bay/src/Actors/Maven/partials/end-of-session.hbs}}
+    </section>
+  </aside>
+  <main class="flexcol content">
   {{! Sheet Body }}
-  <section class="look">
-    <div>
-      <label for="style">{{localize "MAVEN_SHEET.style"}}</label>
-      <input
-        id="style"
-        name="system.style"
-        type="text"
-        value="{{system.style}}"
-        placeholder="A la moda, Jackie O, Boutique de alta costura, etc."
-      />
-    </div>
-    <div>
-      <label for="activity">{{localize "MAVEN_SHEET.activity"}}</label>
-      <input
-        name="system.activity"
-        id="activity"
-        type="text"
-        value="{{system.activity}}"
-        placeholder="Bordar, cocinar tortas, jardinería, etc."
-      />
-    </div>
-    <div>
-      <label for="expert-movement">{{localize "MAVEN_SHEET.expertMovement"}}</label>
-      <input
-        name="system.expertMovement"
-        id="expert-movement"
-        type="text"
-        value="{{system.expertMovement}}"
-      />
-    </div>
-  </section>
-  {{> systems/brindlewood-bay/src/Actors/Maven/partials/experience.hbs}}
-  {{> systems/brindlewood-bay/src/Actors/Maven/partials/abilities.hbs}}
-  {{> systems/brindlewood-bay/src/Actors/Maven/partials/conditions.hbs}}
-  {{> systems/brindlewood-bay/src/Actors/Maven/partials/home-sweet-home.hbs}}
-  {{> systems/brindlewood-bay/src/Actors/Maven/partials/end-of-session.hbs}}
+    
+    {{> systems/brindlewood-bay/src/Actors/Maven/partials/abilities.hbs}}
+    {{> systems/brindlewood-bay/src/Actors/Maven/partials/home-sweet-home.hbs}}
+    {{> systems/brindlewood-bay/src/Actors/Maven/partials/queen-crowns.hbs}}
+    {{> systems/brindlewood-bay/src/Actors/Maven/partials/conditions.hbs}}
+
+  </main>
 </form>

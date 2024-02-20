@@ -1,0 +1,19 @@
+<section>
+  <h2>{{localize "MAVEN_SHEET.queenCrowns"}}</h2>
+  <div class="queen-crowns questions">
+    {{#each system.queenCrowns as |queenCrown|}}
+      <div class="question on-click-queen-crown" data-position={{@index}}>
+        <div class="end-session-checkbox">
+          {{#if queenCrown.selected}}
+            <i class="fa-solid fa-square-check"></i>
+          {{else}}
+            <i class="fa-regular fa-square"></i>
+          {{/if}}
+        </div>
+        <span>
+          {{queenCrown.crown}}
+        </span>
+      </div>
+    {{/each}}
+  </div>
+</section>

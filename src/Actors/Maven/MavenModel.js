@@ -24,6 +24,37 @@ const END_SESSION_QUESTIONS = [
   },
 ];
 
+const QUEEN_CROWNS = [
+  {
+    selected: false,
+    crown: "Narra tu recuerdo más preciado con tu pareja fallecida.",
+  },
+  {
+    selected: false,
+    crown:
+      "Narra una escena que te muestre como una hermana o hija imperfecta.",
+  },
+  {
+    selected: false,
+    crown: "Narra una escena que te muestre como una madre imperfecta.",
+  },
+  { selected: false, crown: "Narra tu recuerdo más preciado con tus hijos." },
+  {
+    selected: false,
+    crown:
+      "Narra una escena del presente que muestre un aspecto privado tuyo que pocas personas conocen.",
+  },
+  {
+    selected: false,
+    crown: "Narra una escena del presente que muestre un romance floreciente.",
+  },
+  {
+    selected: false,
+    crown:
+      "Narra una escena del presente que muestre cómo satisfaces tus deseos físicos.",
+  },
+];
+
 class MavenData extends foundry.abstract.DataModel {
   static defineSchema() {
     const fields = foundry.data.fields;
@@ -117,6 +148,21 @@ class MavenData extends foundry.abstract.DataModel {
         }),
         {
           initial: END_SESSION_QUESTIONS,
+        }
+      ),
+      queenCrowns: new fields.ArrayField(
+        new fields.SchemaField({
+          selected: new fields.BooleanField({
+            required: true,
+            initial: false,
+          }),
+          crown: new fields.StringField({
+            required: true,
+            initial: "",
+          }),
+        }),
+        {
+          initial: QUEEN_CROWNS,
         }
       ),
     };

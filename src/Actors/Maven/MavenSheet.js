@@ -4,7 +4,7 @@ class MavenSheet extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["maven", "sheet", "actor"],
       template: "systems/brindlewood-bay/src/Actors/Maven/maven-sheet.hbs",
-      width: 600,
+      width: 800,
       height: 600,
       tabs: [
         {
@@ -82,6 +82,12 @@ class MavenSheet extends ActorSheet {
       "click contextmenu",
       ".on-click-question",
       this._onQuestionToggle.bind(this)
+    );
+
+    html.on(
+      "click contextmenu",
+      ".on-click-queen-crown",
+      this._onQueenCrownToggle.bind(this)
     );
   }
 
@@ -258,6 +264,25 @@ class MavenSheet extends ActorSheet {
 
       return await this.actor.update({
         ["system.endOfSessionQuestions"]: questions,
+      });
+    }
+  }
+
+  async _onQueenCrownToggle(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const position = element.dataset.position;
+    const crowns = this.actor.system.queenCrowns;
+
+    if (event.type == "contextmenu") {
+      crowns[position].selected = false;
+      return await this.actor.update({
+        ["system.queenCrowns"]: crowns,
+      });
+    } else {
+      crowns[position].selected = true;
+      return await this.actor.update({
+        ["system.queenCrowns"]: crowns,
       });
     }
   }

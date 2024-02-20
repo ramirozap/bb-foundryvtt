@@ -16,6 +16,23 @@
   color: var(--primary-color);
 }
 
+.maven.sheet.actor .maven {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 10px;
+}
+
+.maven.sheet.actor .profile-img {
+  height: 150px;
+  width: 150px;
+  border: transparent;
+}
+
+.sheet-sidebar {
+  border-right: 1px solid var(--primary-color);
+  padding-right: 10px;
+}
+
 .maven.sheet.actor input {
   background-color: beige;
   border: 1px solid transparent;
@@ -24,8 +41,20 @@
   padding: 3px;
 }
 
+.maven.sheet.actor .charname input {
+  border-color: transparent;
+}
+
+.sheet header.sheet-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .sheet-header {
-  max-height: 80px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .abilities {
@@ -111,7 +140,6 @@
 .look {
   display: grid;
   gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr;
   max-height: 50px;
 }
 
@@ -155,10 +183,16 @@
 .questions {
   display: grid;
   gap: 10px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 .questions .question {
   display: grid;
   grid-template-columns: 25px 1fr;
+}
+
+.content {
+  display: grid;
+  gap: 10px;
+  grid-auto-columns: 1fr;
 }

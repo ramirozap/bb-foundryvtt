@@ -2,7 +2,7 @@
   "id": "brindlewood-bay",
   "title": "Brindlewood Bay",
   "description": "Brindlewood Bay system (unofficial)",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "compatibility": {
     "minimum": "11",
     "verified": "11",
@@ -18,7 +18,7 @@
   ],
   "styles": ["src/Actors/Maven/styles.css"],
   "manifest": "https://raw.githubusercontent.com/ramirozap/bb-foundryvtt/main/system.json",
-  "download": "https://github.com/ramirozap/bb-foundryvtt/archive/refs/tags/0.2.zip",
+  "download": "https://github.com/ramirozap/bb-foundryvtt/archive/refs/tags/0.3.zip",
   "flags": {
     "hotReload": {
       "extensions": ["css", "hbs", "json"]
